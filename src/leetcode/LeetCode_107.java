@@ -27,24 +27,22 @@ public class LeetCode_107 {
         public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
 
-            List<List<Integer>> solution=new LinkedList<>();
-            if(root==null)
+            List<List<Integer>> solution = new LinkedList<>();
+            if (root == null)
                 return solution;
-            Queue<TreeNode> q=new LinkedList<>();
+            Queue<TreeNode> q = new LinkedList<>();
             q.add(root);
-            while(!q.isEmpty())
-            {
-                List<Integer> levelList=new LinkedList<>();
-                int size=q.size();
-                for(int i=0;i<size;i++)
-                {
-                    TreeNode temp=q.poll();
+            while (!q.isEmpty()) {
+                List<Integer> levelList = new LinkedList<>();
+                int size = q.size();
+                for (int i = 0; i < size; i++) {
+                    TreeNode temp = q.poll();
                     levelList.add(temp.val);
-                    if(temp.left!=null) q.add(temp.left);
-                    if(temp.right!=null) q.add(temp.right);
+                    if (temp.left != null) q.add(temp.left);
+                    if (temp.right != null) q.add(temp.right);
                 }
 
-                solution.add(0,levelList);
+                solution.add(0, levelList);
 
             }
 
@@ -52,4 +50,5 @@ public class LeetCode_107 {
 
 
         }
+    }
 }
