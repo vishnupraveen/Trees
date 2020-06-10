@@ -60,6 +60,26 @@ public class LeetCode_98 {
 
 
         }
+        //reccursive solution
+        public boolean isValidBSTR(TreeNode root) {
+
+            return isBST(root,null,null);
+
+        }
+
+        public boolean isBST(TreeNode root, Integer max,Integer min)
+        {
+            if(root==null)
+                return true;
+            if(max!=null&&max<=root.val)
+                return false;
+            if(min!=null&&min>=root.val)
+                return false;
+            return isBST(root.left,root.val,min)&&isBST(root.right,max,root.val);
+
+
+
+        }
 
     }
 }
